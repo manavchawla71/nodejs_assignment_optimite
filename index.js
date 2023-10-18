@@ -1,17 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose"); // for request logging
 const morgan = require("morgan");
+const dotenv = require("dotenv");
 const authenticateJWT = require("./authmiddleware");
+dotenv.config();
 const app = express();
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://chawlamanav71:sLZvy2vbcld1bWGu@cluster0.vgyk3nc.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(`${process.env.MONGO_URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
