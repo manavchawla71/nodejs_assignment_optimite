@@ -6,3 +6,10 @@ steps to run and set up the application :
 3.  Include Middleware app.use() in the backend
 4.  use jwt and auth
 5.  run node index.js
+
+project structure
+project
+
+- models
+- routes
+- basic server file
