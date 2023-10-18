@@ -13,3 +13,8 @@ project
 - models
 - routes
 - basic server file
+
+api endpoints
+
+-tasks (Crud)
+-user ( both post , signup and login)
